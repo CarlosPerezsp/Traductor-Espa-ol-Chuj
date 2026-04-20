@@ -75,12 +75,19 @@ async function translate() {
   error.value = ''
   resultText.value = ''
   try {
-    // Placeholder: calls health endpoint until translation API is wired up
-    const res = await fetch('/api/health')
+    const res = await fetch('/api/translate', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        text: inputText.value.trim(),
+        source_lang: 'es',
+        target_lang: 'chuj'
+      })
+    })
+    if (res.status === 404) throw new Error('Traducción no encontrada')
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     const data = await res.json()
-    // TODO: replace with real translation response field
-    resultText.value = `[${data.status}] Traducción de: "${inputText.value}"`
+    resultText.value = data.target_text
   } catch (e) {
     error.value = e.message || 'Error al conectar con el servidor'
   } finally {

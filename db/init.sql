@@ -44,6 +44,6 @@ INSERT INTO translations (source_text, target_text, source_lang, target_lang, ca
     ('Hola',         'Kolawal',    1, 2, 1),
     ('Buenos días',  'Wach" k"u', 1, 2, 1),
     ('Gracias',      'YujwalYos',    1, 2, 6),
-    ('Uno',          'Jun',        1, 2, 2),
+    ('Uno',          'Juun',        1, 2, 2),
     ('Dos',          'Chab',       1, 2, 2),
     ('Tres',         'Oxe',       1, 2, 2);
