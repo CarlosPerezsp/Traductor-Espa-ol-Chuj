@@ -59,11 +59,15 @@
     <!-- Error message -->
     <p v-if="error" class="mt-3 text-red-600 text-xs text-center">{{ error }}</p>
 
+    <!-- Upload Panel -->
+    <UploadPanel />
+
   </div>
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import UploadPanel from './UploadPanel.vue'
 
 const inputText = ref('')
 const resultText = ref('')

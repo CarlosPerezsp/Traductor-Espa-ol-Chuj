@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 import os
 
-from app.routers import translations_router, languages_router
+from app.routers import translations_router, languages_router, upload_router
 
 app = FastAPI(title="ALMG API", version="0.1.0")
 
@@ -21,6 +21,7 @@ app.mount("/media", StaticFiles(directory="/app/media"), name="media")
 
 app.include_router(translations_router)
 app.include_router(languages_router)
+app.include_router(upload_router)
 
 
 @app.get("/api/health")
