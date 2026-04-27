@@ -1,6 +1,8 @@
 <template>
   <div class="min-h-screen bg-[#f0f7f2] flex flex-col">
-    <HomeScreen />
+    <div class="w-full max-w-5xl mx-auto">
+      <HomeScreen />
+    </div>
   </div>
 </template>
 
